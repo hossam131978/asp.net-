@@ -1,0 +1,21 @@
+﻿body {background-color:#9f6b1a
+}
+#login_div{ align-items:center;text-align:center;position:fixed;margin-left:200px;}
+ input[type="text"]  {
+     text-align:center;
+    color:green; 
+    border: 1px solid black;   
+margin-right:33px;margin-left:33px;
+ }
+ input[type="text"]:focus  {
+    color:gold; 
+    border: 1px solid groove;  
+    background-color:rosybrown; 
+   
+
+ }
+ .labels{text-shadow:6px 6px 1px #403939;font-size:25px;} 
+ input[type="submit"]:disabled{background-color:red;color:black; width:50px;}
+ input[type="submit"]:enabled{background-color:#1a3e04; color:#a3a016; width:80px; height:25px}
+ input[type="submit"]:enabled:hover{box-shadow:3px 3px 1px #a3a016,5px 5px 1px #a3a016 ;color:aliceblue;height:35px; width:100px;}
+ #ErrorLabel{color:#dbba20}

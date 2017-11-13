@@ -1,0 +1,188 @@
+﻿body {
+    height: 450px;
+    width: 1305px;
+    background-color:#c3a74b;
+
+
+}
+
+ #main_div {
+    height: inherit;
+    width: 1300px;
+    overflow: hidden;
+    position:relative;
+    top:100px;
+}
+
+ #header_div {
+        background-color:inherit;
+    width: 1300px;
+    height: 80px;
+    position:absolute;
+    top:0px;
+}
+
+ #header_div h2 {
+        text-shadow: 2px 2px 2px #a86e27;
+        margin: 10px;
+        float: left;
+    }
+
+ #header_div div {
+        text-shadow: 2px 2px 2px #a86e27;
+        margin: 10px;
+        float: right;
+    }
+
+ #header_div div div {
+            text-shadow: 2px 2px 2px #a86e27;
+            float: right;
+        }
+
+ #logout {
+    text-decoration: none;
+    background-color: inherit;
+    color: rebeccapurple;
+}
+ 
+ #logout:hover {
+        font-size: x-large;
+        color: rebeccapurple;
+        text-shadow: #a86e27 3px 3px 1px,#f2a10f 5px 5px 1px;
+        box-shadow: #a86e27 3px 3px 1px;
+        font-weight: 400;
+    }
+
+ #UserName_Label {
+    text-shadow: 2px 2px 2px #a86e27;
+    float: right;
+}
+
+ #Footer_div {
+        background-color:inherit;
+    width: 1320px;
+    height: auto;
+    overflow: auto;
+}
+
+ #left_div {
+        background-color:inherit;
+    width: 200px;
+    height: 500px;
+    float: left;
+    overflow: auto;
+    text-align: center;
+}
+
+ #check_new_task{visibility:hidden;}
+
+ #left_div ul li  button input[type="submit"]
+{
+        width:30px; 
+        color: black;
+        text-align: left;
+        margin:0px;
+        margin-left:5px;
+        height: 20px;
+        box-shadow:none;
+
+        float:left;
+        border:hidden;
+}
+ 
+ #left_div ul li button,input[type="submit"] {
+        color: black;
+        width: 120px;
+        text-align: center;
+        box-shadow: 3px 3px 1px #ed7c10;
+        margin: 10px;
+        padding:0px;
+        height: 25px;
+        text-shadow: 3px 3px 1px #cb8228;
+        border-radius:5px;
+    }
+ 
+ #left_div ul li button:hover,input[type="submit"]:hover {
+            width: 130px;
+        border-radius:8px;
+        height:30px;
+        text-align: center;
+        
+        }
+
+ #left_div ul li select
+    {   text-align: center;
+        box-shadow: 3px 3px 1px #ed7c10;
+        margin: 10px;
+        height: 25px;
+        text-shadow: 3px 3px 1px #cb8228;    
+        z-index:5;
+        width:120px;
+         border-radius:8px;
+    }
+
+ #left_div ul,li button {
+        text-align: center;
+        list-style-type: none;
+    }
+
+ #right_div {
+        background-color:inherit;
+    width: 300px;
+    height: 500px;
+    float: left;
+    overflow: auto;
+}
+
+ table {margin:15px;}
+ table tr {
+    text-decoration: none;
+}
+
+ #div_gridView {
+    width: inherit;
+    background-color: #c3a74b;
+}
+
+ #GridView1 {
+    width: inherit;
+    background-color: #c3a74b;
+}
+
+ #DetailsView1 td {
+    width: 120px;
+    background-color: #c3a74b;
+}
+
+ #DetailsView1 input[type="text"] {
+    width: 128px;
+    background-color: white;
+}
+
+ #UserName_Label {
+    font: 300;
+    font-size: 140%;
+}
+
+ #UserName_Label b {
+        font-weight: bolder;
+        font-family: 'Comic Sans MS';
+    }
+ 
+ #content_div {
+    background-color:inherit;
+    width: 800px;
+    height: 500px;
+    float: left;
+    overflow-x:no-display;
+    overflow-y:auto;
+  
+     
+}
+
+ table a {
+    text-decoration: none;
+    color: blueviolet;
+        background-color:inherit;
+    position: relative;
+}

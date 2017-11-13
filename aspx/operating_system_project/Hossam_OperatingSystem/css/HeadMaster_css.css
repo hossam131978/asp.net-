@@ -1,0 +1,38 @@
+﻿body {
+}
+.main_div{background:linear-gradient(to bottom,#e58c1e 0%,aqua 100%) no-repeat}
+/*HeadMaster page css*/
+#header_div {background-color:inherit; width:auto; height:100px;}
+  h2{text-shadow:2px 2px 2px #a86e27;margin:10px; float:left;display:inline-block;}
+#header_div > div{text-shadow:2px 2px 2px #a86e27;margin:10px; float:right;margin:0;padding:0;margin-right:20px;}
+#header_div div div{text-shadow:2px 2px 2px #a86e27; float:right;display:inline-block;}
+#UserName_Label,#page-type{text-shadow:0px 6px 2px #a86e27;text-transform:capitalize;color:#460a0a;}
+.logout{margin-top:1em;}
+#logout {text-decoration:none; background-color:inherit;color:rebeccapurple;}
+#logout:hover{text-shadow:3px 3px 11px #a86e27;font-size:1.5em;}
+#UserName_Label{ float:right}
+#Footer_div{background-color: inherit;width:auto; height:auto; overflow:auto; }
+#left_div{background-color:aqua; width:auto; height:500px;float:left;overflow:auto;}
+#content_div {
+    background-color: inherit;
+    width: 800px;
+    height: 500px;
+    float: left;
+    overflow: auto;
+}
+#left_div{background-color:inherit; width:auto; height:500px;float:left;overflow:auto;}
+#content_div{background-color:inherit; width:800px; height:500px;float:left;overflow:auto;}
+ul{list-style-type:none;width:350px;}
+ul li{margin:5px;}
+input[type="text"]{width:100px;}
+input[type="text"]::after{content:"enter id";}
+ul li input[type="submit"]{width:200px;height:30px;background:linear-gradient(to bottom,#e58c1e 0%,#460a0a 100%) no-repeat;}
+ul li input[type="submit"]:hover{text-shadow:0px 0px 3px white,0px 0px 3px white,0px 0px 9px white,0px 0px 18px white}
+ 
+
+/*the AddManager page css*/
+ table tr td {   background-color:bisque;margin:25px; }
+ table thead tr td,#tdbutton,a {text-decoration:none; text-align:center;background-color:gray }
+ #ButtonSubmit:hover:enabled{box-shadow:3px 3px 3px #a86e27,7px 7px 4px #a86e27; background-color:#ff6a00;}
+ #ButtonSubmit {  vertical-align:central;text-align:end;}
+ 

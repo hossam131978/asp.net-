@@ -1,0 +1,249 @@
+﻿body {
+    height: 450px;
+    width: 1305px;
+    background-color:#c3a74b;
+}
+
+#main_div {
+    height: inherit;
+    width: 1300px;
+    overflow: hidden;
+    position:relative;
+    top:100px;
+    background-color:inherit;
+
+}
+
+#header_div {
+    background-color:inherit;
+   
+
+    width: 1300px;
+    height: 80px;
+    position:absolute;
+    top:0px;
+}
+
+    #header_div h2 {
+        text-shadow: 2px 2px 2px #a86e27;
+        margin: 10px;
+        float: left;
+    }
+
+    #header_div div {
+        text-shadow: 2px 2px 2px #a86e27;
+        margin: 10px;
+        float: right;
+    }
+
+        #header_div div div {
+            text-shadow: 2px 2px 2px #a86e27;
+            float: right;
+        }
+
+#logout {
+    text-decoration: none;
+    background-color: inherit;
+    color: rebeccapurple;
+}
+
+    #logout:hover {
+        font-size: x-large;
+        color: rebeccapurple;
+        text-shadow: #a86e27 3px 3px 1px,#f2a10f 5px 5px 1px;
+        box-shadow: #a86e27 3px 3px 1px;
+        font-weight: 400;
+    }
+
+#UserName_Label {
+    text-shadow: 2px 2px 2px #a86e27;
+    float: right;
+}
+
+#Footer_div {
+    background-color: inherit;
+    width: 1320px;
+    height: auto;
+    overflow: auto;
+}
+
+#left_div {
+        background-color:inherit;
+    width: 220px;
+    height: 500px;
+    float: left;
+    overflow: auto;
+    text-align: center;
+}
+
+    #left_div ul li select
+    {   text-align: center;
+        box-shadow: 3px 3px 1px #ed7c10;
+        margin: 10px;
+        height: 25px;
+        text-shadow: 3px 3px 1px #cb8228;    
+        z-index:5;
+        width:120px;
+         border-radius:8px;
+    }
+
+
+    #left_div ul li input[type="submit"] {
+        color: black;
+        width: 100px;
+        text-align: center;
+        box-shadow: 3px 3px 1px #ed7c10;
+        margin: 10px;
+        height: 25px;
+        text-shadow: 3px 3px 1px #cb8228;
+        border-radius:5px;
+    }
+
+        #left_div ul li input[type="submit"]:hover {
+            width: 120px;
+        border-radius:8px;
+        height:30px;
+        }
+
+
+    #left_div ul {
+        text-align: center;
+        list-style-type: none;
+    }
+
+#right_div {
+        background-color:inherit;
+
+    width: 300px;
+    height: 500px;
+    float: left;
+    overflow: auto;
+}
+
+table tr {
+    text-decoration: none;
+}
+
+#div_gridView {
+    width: inherit;
+    background-color:inherit;
+}
+
+#GridView1 {
+    width: inherit;
+    background-color:inherit;
+}
+
+#DetailsView1 td {
+    width: 120px;
+    background-color: #c3a74b;
+}
+
+#DetailsView1 input[type="text"] {
+    width: 128px;
+    background-color: white;
+}
+
+
+#UserName_Label {
+    font: 300;
+    font-size: 140%;
+}
+
+    #UserName_Label b {
+        font-weight: bolder;
+        font-family: 'Comic Sans MS';
+    }
+#content_div {
+    background-color:inherit;
+    width: 800px;
+    height: 500px;
+    float: left;
+    overflow: auto;
+    
+
+}
+
+table a {
+    text-decoration: none;
+    color: blueviolet;
+    background-color: inherit;
+    position: relative;
+}
+div { background-color:inherit;}
+   
+/*#DetailsView1 {width:250px;background-color:#c3a74b}*/
+
+
+/*the add tasks page css*/
+#form_AddTask table tr td {
+    background-color: bisque;
+    margin: 25px;
+}
+
+#form_AddTask table thead tr td, #tdbutton, a {
+    text-decoration: none;
+    text-align: center;
+    background-color: gray;
+}
+
+#form_AddTask #ButtonSubmit:hover:enabled {
+    box-shadow: 3px 3px 3px #a86e27,7px 7px 4px #a86e27;
+    background-color: #ff6a00;
+}
+
+#form_AddTask #ButtonSubmit:enabled {
+    box-shadow: 3px 3px 3px #a86e27,7px 7px 4px #a86e27;
+    background-color: #ff6a00;
+}
+
+#form_AddTask #ButtonSubmit {
+    text-align: center;
+}
+
+#form_AddTask input, textarea {
+    width: 180px;
+}
+
+#form_AddTask a {
+    color: aliceblue;
+}
+
+#form_AddTask select {
+    width: 180px;
+}
+
+
+/*the move tasks page css*/
+#form_MoveTask table tr td {
+    background-color: bisque;
+    margin: 25px;
+}
+
+#form_MoveTask table thead tr td, #tdbutton, a {
+    text-decoration: none;
+    text-align: center;
+    background-color: gray;
+}
+
+#form_MoveTask #ButtonSubmit:hover:enabled {
+    box-shadow: 3px 3px 3px #a86e27,7px 7px 4px #a86e27;
+    background-color: #ff6a00;
+}
+
+#form_MoveTask #ButtonSubmit {
+    text-align: center;
+}
+
+#form_MoveTask a {
+    color: aliceblue;
+}
+
+#form_MoveTask select {
+    width: 180px;
+}
+
+#form_MoveTask #TextBoxTaskDescription {
+    width: auto;
+}
+/*#form_MoveTask   input,textarea {columns:auto;width:320px}*/

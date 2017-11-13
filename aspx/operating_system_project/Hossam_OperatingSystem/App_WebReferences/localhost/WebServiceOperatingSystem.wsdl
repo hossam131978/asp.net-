@@ -1,0 +1,955 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Get_sql_exeption">
+        <s:complexType />
+      </s:element>
+      <s:element name="Get_sql_exeptionResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Get_sql_exeptionResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTaskPriorityList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTaskPriorityListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTaskPriorityListResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTaskStatusList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTaskStatusListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTaskStatusListResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetTaskEmployeePermitionList">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetTaskEmployeePermitionListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTaskEmployeePermitionListResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEnum_List">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="column" type="tns:EnumTaskColumnName" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="EnumTaskColumnName">
+        <s:restriction base="s:string">
+          <s:enumeration value="TaskPriority" />
+          <s:enumeration value="Status" />
+          <s:enumeration value="EmployeePermition" />
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="GetEnum_ListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEnum_ListResult" type="tns:ArrayOfAnyType" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfAnyType">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="anyType" nillable="true" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllEmployees">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ManagerUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ManagerPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllEmployeesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllEmployeesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckPasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetManagers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ManagerUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ManagerPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetManagersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetManagersResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTasksByManagerId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ManagerUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ManagerPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ManagerId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTasksByManagerIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTasksByManagerIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTasksByEmployeeId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="EmployeeUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmployeePassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="EmployeeId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTasksByEmployeeIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTasksByEmployeeIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeesByManagerId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ManagerUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ManagerPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ManagerId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetEmployeesByManagerIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetEmployeesByManagerIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddManager">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ManagerUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ManagerPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ManagerId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ManagerName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ManagerField" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddManagerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddManagerResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="EmployeeId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmployeeName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmployeeUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmployeePassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ManagerId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddEmployeeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTask">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TaskId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ManagerId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="EmployeeId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TaskDescription" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TaskFulfillmentTime" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TaskPriority" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddTaskResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="AddTaskResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetManagerEmployeesId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ManagerUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ManagerPassword" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="ManagerId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetManagerEmployeesIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetManagerEmployeesIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTasksIdsAndEmployeesIds">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ManagerId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetTasksIdsAndEmployeesIdsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetTasksIdsAndEmployeesIdsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MoveTask">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TaskId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="DestinationEmployeeId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MoveTaskResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="MoveTaskResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEmployeeByManagerId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="nEmployeeId" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="oEmployeeId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmployeeName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmployeeUserName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmployeePassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateEmployeeByManagerIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateEmployeeByManagerIdResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTaskByManagerId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TaskId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="TaskDescription" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="TaskFulfillmentTime" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="TaskPriority" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="EmployeeId" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTaskByManagerIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateTaskByManagerIdResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTaskByEmployee">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TaskId" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmployeePermition" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="EmployeeDescription" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTaskByEmployeeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdateTaskByEmployeeResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="Get_sql_exeptionSoapIn">
+    <wsdl:part name="parameters" element="tns:Get_sql_exeption" />
+  </wsdl:message>
+  <wsdl:message name="Get_sql_exeptionSoapOut">
+    <wsdl:part name="parameters" element="tns:Get_sql_exeptionResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskPriorityListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTaskPriorityList" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskPriorityListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTaskPriorityListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskStatusListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTaskStatusList" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskStatusListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTaskStatusListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskEmployeePermitionListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTaskEmployeePermitionList" />
+  </wsdl:message>
+  <wsdl:message name="GetTaskEmployeePermitionListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTaskEmployeePermitionListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEnum_ListSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEnum_List" />
+  </wsdl:message>
+  <wsdl:message name="GetEnum_ListSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEnum_ListResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllEmployeesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllEmployees" />
+  </wsdl:message>
+  <wsdl:message name="GetAllEmployeesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllEmployeesResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckPassword" />
+  </wsdl:message>
+  <wsdl:message name="CheckPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetManagersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetManagers" />
+  </wsdl:message>
+  <wsdl:message name="GetManagersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetManagersResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTasksByManagerIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTasksByManagerId" />
+  </wsdl:message>
+  <wsdl:message name="GetTasksByManagerIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTasksByManagerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTasksByEmployeeIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTasksByEmployeeId" />
+  </wsdl:message>
+  <wsdl:message name="GetTasksByEmployeeIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTasksByEmployeeIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeesByManagerIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetEmployeesByManagerId" />
+  </wsdl:message>
+  <wsdl:message name="GetEmployeesByManagerIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetEmployeesByManagerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddManagerSoapIn">
+    <wsdl:part name="parameters" element="tns:AddManager" />
+  </wsdl:message>
+  <wsdl:message name="AddManagerSoapOut">
+    <wsdl:part name="parameters" element="tns:AddManagerResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:AddEmployee" />
+  </wsdl:message>
+  <wsdl:message name="AddEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:AddEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddTaskSoapIn">
+    <wsdl:part name="parameters" element="tns:AddTask" />
+  </wsdl:message>
+  <wsdl:message name="AddTaskSoapOut">
+    <wsdl:part name="parameters" element="tns:AddTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetManagerEmployeesIdSoapIn">
+    <wsdl:part name="parameters" element="tns:GetManagerEmployeesId" />
+  </wsdl:message>
+  <wsdl:message name="GetManagerEmployeesIdSoapOut">
+    <wsdl:part name="parameters" element="tns:GetManagerEmployeesIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetTasksIdsAndEmployeesIdsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetTasksIdsAndEmployeesIds" />
+  </wsdl:message>
+  <wsdl:message name="GetTasksIdsAndEmployeesIdsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetTasksIdsAndEmployeesIdsResponse" />
+  </wsdl:message>
+  <wsdl:message name="MoveTaskSoapIn">
+    <wsdl:part name="parameters" element="tns:MoveTask" />
+  </wsdl:message>
+  <wsdl:message name="MoveTaskSoapOut">
+    <wsdl:part name="parameters" element="tns:MoveTaskResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmployeeByManagerIdSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateEmployeeByManagerId" />
+  </wsdl:message>
+  <wsdl:message name="UpdateEmployeeByManagerIdSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateEmployeeByManagerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTaskByManagerIdSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTaskByManagerId" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTaskByManagerIdSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTaskByManagerIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTaskByEmployeeSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTaskByEmployee" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTaskByEmployeeSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTaskByEmployeeResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceOperatingSystemSoap">
+    <wsdl:operation name="Get_sql_exeption">
+      <wsdl:input message="tns:Get_sql_exeptionSoapIn" />
+      <wsdl:output message="tns:Get_sql_exeptionSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskPriorityList">
+      <wsdl:input message="tns:GetTaskPriorityListSoapIn" />
+      <wsdl:output message="tns:GetTaskPriorityListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskStatusList">
+      <wsdl:input message="tns:GetTaskStatusListSoapIn" />
+      <wsdl:output message="tns:GetTaskStatusListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskEmployeePermitionList">
+      <wsdl:input message="tns:GetTaskEmployeePermitionListSoapIn" />
+      <wsdl:output message="tns:GetTaskEmployeePermitionListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnum_List">
+      <wsdl:input message="tns:GetEnum_ListSoapIn" />
+      <wsdl:output message="tns:GetEnum_ListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEmployees">
+      <wsdl:input message="tns:GetAllEmployeesSoapIn" />
+      <wsdl:output message="tns:GetAllEmployeesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckPassword">
+      <wsdl:input message="tns:CheckPasswordSoapIn" />
+      <wsdl:output message="tns:CheckPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManagers">
+      <wsdl:input message="tns:GetManagersSoapIn" />
+      <wsdl:output message="tns:GetManagersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTasksByManagerId">
+      <wsdl:input message="tns:GetTasksByManagerIdSoapIn" />
+      <wsdl:output message="tns:GetTasksByManagerIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTasksByEmployeeId">
+      <wsdl:input message="tns:GetTasksByEmployeeIdSoapIn" />
+      <wsdl:output message="tns:GetTasksByEmployeeIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeesByManagerId">
+      <wsdl:input message="tns:GetEmployeesByManagerIdSoapIn" />
+      <wsdl:output message="tns:GetEmployeesByManagerIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddManager">
+      <wsdl:input message="tns:AddManagerSoapIn" />
+      <wsdl:output message="tns:AddManagerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployee">
+      <wsdl:input message="tns:AddEmployeeSoapIn" />
+      <wsdl:output message="tns:AddEmployeeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTask">
+      <wsdl:input message="tns:AddTaskSoapIn" />
+      <wsdl:output message="tns:AddTaskSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetManagerEmployeesId">
+      <wsdl:input message="tns:GetManagerEmployeesIdSoapIn" />
+      <wsdl:output message="tns:GetManagerEmployeesIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTasksIdsAndEmployeesIds">
+      <wsdl:input message="tns:GetTasksIdsAndEmployeesIdsSoapIn" />
+      <wsdl:output message="tns:GetTasksIdsAndEmployeesIdsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MoveTask">
+      <wsdl:input message="tns:MoveTaskSoapIn" />
+      <wsdl:output message="tns:MoveTaskSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployeeByManagerId">
+      <wsdl:input message="tns:UpdateEmployeeByManagerIdSoapIn" />
+      <wsdl:output message="tns:UpdateEmployeeByManagerIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTaskByManagerId">
+      <wsdl:input message="tns:UpdateTaskByManagerIdSoapIn" />
+      <wsdl:output message="tns:UpdateTaskByManagerIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTaskByEmployee">
+      <wsdl:input message="tns:UpdateTaskByEmployeeSoapIn" />
+      <wsdl:output message="tns:UpdateTaskByEmployeeSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceOperatingSystemSoap" type="tns:WebServiceOperatingSystemSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Get_sql_exeption">
+      <soap:operation soapAction="http://tempuri.org/Get_sql_exeption" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskPriorityList">
+      <soap:operation soapAction="http://tempuri.org/GetTaskPriorityList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskStatusList">
+      <soap:operation soapAction="http://tempuri.org/GetTaskStatusList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskEmployeePermitionList">
+      <soap:operation soapAction="http://tempuri.org/GetTaskEmployeePermitionList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnum_List">
+      <soap:operation soapAction="http://tempuri.org/GetEnum_List" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEmployees">
+      <soap:operation soapAction="http://tempuri.org/GetAllEmployees" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPassword">
+      <soap:operation soapAction="http://tempuri.org/CheckPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManagers">
+      <soap:operation soapAction="http://tempuri.org/GetManagers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTasksByManagerId">
+      <soap:operation soapAction="http://tempuri.org/GetTasksByManagerId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTasksByEmployeeId">
+      <soap:operation soapAction="http://tempuri.org/GetTasksByEmployeeId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeesByManagerId">
+      <soap:operation soapAction="http://tempuri.org/GetEmployeesByManagerId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddManager">
+      <soap:operation soapAction="http://tempuri.org/AddManager" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployee">
+      <soap:operation soapAction="http://tempuri.org/AddEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTask">
+      <soap:operation soapAction="http://tempuri.org/AddTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManagerEmployeesId">
+      <soap:operation soapAction="http://tempuri.org/GetManagerEmployeesId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTasksIdsAndEmployeesIds">
+      <soap:operation soapAction="http://tempuri.org/GetTasksIdsAndEmployeesIds" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveTask">
+      <soap:operation soapAction="http://tempuri.org/MoveTask" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployeeByManagerId">
+      <soap:operation soapAction="http://tempuri.org/UpdateEmployeeByManagerId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTaskByManagerId">
+      <soap:operation soapAction="http://tempuri.org/UpdateTaskByManagerId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTaskByEmployee">
+      <soap:operation soapAction="http://tempuri.org/UpdateTaskByEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceOperatingSystemSoap12" type="tns:WebServiceOperatingSystemSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Get_sql_exeption">
+      <soap12:operation soapAction="http://tempuri.org/Get_sql_exeption" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskPriorityList">
+      <soap12:operation soapAction="http://tempuri.org/GetTaskPriorityList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskStatusList">
+      <soap12:operation soapAction="http://tempuri.org/GetTaskStatusList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTaskEmployeePermitionList">
+      <soap12:operation soapAction="http://tempuri.org/GetTaskEmployeePermitionList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnum_List">
+      <soap12:operation soapAction="http://tempuri.org/GetEnum_List" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllEmployees">
+      <soap12:operation soapAction="http://tempuri.org/GetAllEmployees" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckPassword">
+      <soap12:operation soapAction="http://tempuri.org/CheckPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManagers">
+      <soap12:operation soapAction="http://tempuri.org/GetManagers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTasksByManagerId">
+      <soap12:operation soapAction="http://tempuri.org/GetTasksByManagerId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTasksByEmployeeId">
+      <soap12:operation soapAction="http://tempuri.org/GetTasksByEmployeeId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEmployeesByManagerId">
+      <soap12:operation soapAction="http://tempuri.org/GetEmployeesByManagerId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddManager">
+      <soap12:operation soapAction="http://tempuri.org/AddManager" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddEmployee">
+      <soap12:operation soapAction="http://tempuri.org/AddEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTask">
+      <soap12:operation soapAction="http://tempuri.org/AddTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetManagerEmployeesId">
+      <soap12:operation soapAction="http://tempuri.org/GetManagerEmployeesId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTasksIdsAndEmployeesIds">
+      <soap12:operation soapAction="http://tempuri.org/GetTasksIdsAndEmployeesIds" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MoveTask">
+      <soap12:operation soapAction="http://tempuri.org/MoveTask" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateEmployeeByManagerId">
+      <soap12:operation soapAction="http://tempuri.org/UpdateEmployeeByManagerId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTaskByManagerId">
+      <soap12:operation soapAction="http://tempuri.org/UpdateTaskByManagerId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTaskByEmployee">
+      <soap12:operation soapAction="http://tempuri.org/UpdateTaskByEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceOperatingSystem">
+    <wsdl:port name="WebServiceOperatingSystemSoap" binding="tns:WebServiceOperatingSystemSoap">
+      <soap:address location="http://localhost:57987/WebServiceOperatingSystem.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceOperatingSystemSoap12" binding="tns:WebServiceOperatingSystemSoap12">
+      <soap12:address location="http://localhost:57987/WebServiceOperatingSystem.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
