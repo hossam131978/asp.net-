@@ -1,0 +1,6 @@
+﻿body {width:1200px;}
+.maindiv {height:800px;width:auto;}
+
+.divleft  { background-color:indianred; height:inherit;width:15%; float:left;  overflow: auto;}
+.divright { background-color:indianred; height:inherit;width:15%; float:left; overflow: auto;}
+.divcenter { background-color: blueviolet; height:inherit;width:70%; float:left; overflow: auto; }

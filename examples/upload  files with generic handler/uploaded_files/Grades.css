@@ -1,0 +1,12 @@
+﻿body {}
+.GradesTable{border:solid;}
+.findgrade{border-color:green;}
+td{border-top:solid; border-bottom:solid;border:solid; }
+.MarqueeDiv {
+    width: auto;
+    height: 30px;
+    background-color:azure;
+    position: relative;
+   vertical-align:central; 
+  vertical-align:middle; 
+}
